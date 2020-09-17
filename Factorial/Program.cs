@@ -4,9 +4,18 @@ namespace Factorial
 {
     class Program
     {
+        public static int Factorial(int num)
+        {
+            int result = 1;
+            for (int i = 1; i <= num; i++) result *= i;
+            return result;
+        }
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.Write("Enter number to factorial it:");
+            int num;
+            while (!int.TryParse(Console.ReadLine(), out num)) Console.WriteLine("Do not write chars, only int!");
+            Console.WriteLine($"Factorial of {num}  =  {Factorial(num)}");
         }
     }
 }
